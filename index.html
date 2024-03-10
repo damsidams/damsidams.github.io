@@ -1,265 +1,91 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Junior Conseil Triper</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav>
-        <div class="navbar_container">
-            <div class="nav_left">
-                <div class="nav_logo">
-                    <a href="index.html"><img src="/assets/logos/JCT.png" alt=""></a>
-                </div>
-                <div class="nav_text_logo">
-                    <h1>Junior Conseil Triper</h1>
-                </div>
-            </div>
-            <div>
-                <ul class="navbar">
-                    <li><a href="">Hébergements</a></li>
-                    <li><a href="#activity">Activités</a></li>
-                    <li><a href="" style="color: #0065fc;" class="signup">S'inscrire</a></li>
-                </ul>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OXMOX - your personalized cuddly toy</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="index.html">
+          <img class="letter-logo" src="assets/letter-logo.png" alt="">
+        </a>
+      </div>
+      <div class="btn-nav">
+        <div>
+          <ul class="nav-links">
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
         </div>
-    </nav>
-    <div class="above_all">
-        <div class="search_filters">
-            <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
-            <h2>En plein centre ville ou en pleine nature</h2>
-            <div class="position">
-                <div class="column logos-location"><a href=""><img src="assets/logos/locato.png" alt=""></a></div>
-                <div class="column position-location"><input type="text" value="Marseille, France" class="local-input"></div>
-                <div class="column button-location"><a href="">Rechercher</a></div>
-            </div>
-            <div class="filters">
-                <div class="column2"><a>Filtres</a></div>
-                <div class="column2"><button><img class="logo-filter" src="assets/logos/euro.png" alt=""/>Economique</button></div>
-                <div class="column2"><button><img class="logo-filter" src="assets/logos/famille.png" alt=""/>Familial</button></div>
-                <div class="column2"><button><img class="logo-filter" src="assets/logos/coeur-romantique.png" alt=""/>Romantique</button></div>
-                <div class="column2"><button><img class="logo-filter" src="assets/logos/animal-de-compagnie.png" alt=""/>Animaux Autorises</button></div>
-            </div>
-            <div class="infos">
-                <img src="assets/logos/information.png" alt=""/>
-                <a>Plus de 500 logements sont disponible dans cette ville</a>
-            </div>
-        </div>
-        <div class="result">
-            <div class="in-location">
-                <h1>Hébergements à Marseille</h1>
-                <div class="img-row">
-                    <div class="img-prices">
-                        <a href="">
-                        <img class="host-img" src="assets/hebergements/7.jpg" alt="">
-                        <div class="img-prices-text">
-                            <h3>Auberge de la Cannebiere</h3>
-                            <p>Nuit a partir de 25€</p>
-                        </div>
-                        <div class="stars">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-empty.png" alt="">
-                        </div>
-                        </a>
-                    </div>
-                    <div class="img-prices">
-                        <a href="">
-                        <img class="host-img" src="assets/hebergements/6.jpg" alt="">
-                        <div class="img-prices-text">
-                            <h3>Hotel du port</h3>
-                            <p>Nuit a partir de 52€</p>
-                        </div>
-                        <div class="stars">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                        </div>
-                        </a>
-                    </div>
-                    <div class="img-prices">
-                        <a href="">
-                        <img class="host-img" src="assets/hebergements/9.jpg" alt="">
-                        <div class="img-prices-text">
-                            <h3>Hotel Les mouettes</h3>
-                            <p>Nuit a partir de 76€</p>
-                        </div>
-                        <div class="stars">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-empty.png" alt="">
-                        </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="img-row" style="margin-top: 30px;">
-                    <div class="img-prices">
-                        <a href="">
-                        <img class="host-img" src="assets/hebergements/1.jpg" alt="">
-                        <div class="img-prices-text">
-                            <h3>Auberge de la Cannebiere</h3>
-                            <p>Nuit a partir de 25€</p>
-                        </div>
-                        <div class="stars">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-empty.png" alt="">
-                            <img src="assets/logos/star-empty.png" alt="">
-                        </div>
-                        </a>
-                    </div>
-                    <div class="img-prices">
-                        <a href="">
-                        <img class="host-img" src="assets/hebergements/8.jpg" alt="">
-                        <div class="img-prices-text">
-                            <h3>Hotel du port</h3>
-                            <p>Nuit a partir de 52€</p>
-                        </div>
-                        <div class="stars">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-empty.png" alt="">
-                        </div>
-                        </a>
-                    </div>
-                    <div class="img-prices">
-                        <a href="">
-                        <img class="host-img" src="assets/hebergements/4.jpg" alt="">
-                        <div class="img-prices-text">
-                            <h3>Hotel Les mouettes</h3>
-                            <p>Nuit a partir de 76€</p>
-                        </div>
-                        <div class="stars">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                            <img src="assets/logos/star-full.png" alt="">
-                        </div>
-                        </a>
-                    </div>
-                </div>
-                <a href=""><h2>Afficher Plus</h2></a>
-            </div>
-            <div class="trending">
-                <div class="title-logo">
-                <h1>Les plus populaires</h1>
-                <img src="assets/logos/tendance-haussiere.png" alt="">
-                </div>
-                <div class="img-row-trend">
-                    <div class="img-prices-trend">
-                        <img class="host-img-trend" src="assets/hebergements/3.jpg" alt="">
-                        <div class="right-trend">
-                            <div class="img-prices-text-trend">
-                                <h3>Hotel Le soleil du matin</h3>
-                                <p>Nuit a partir de 128€</p>
-                            </div>
-                            <div class="stars-trend">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-full.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="img-prices-trend">
-                        <img class="host-img-trend" src="assets/hebergements/2.jpg" alt="">
-                        <div class="right-trend">
-                            <div class="img-prices-text-trend">
-                                <h3>Au coeur de l'eau Chambre d'hotes</h3>
-                                <p>Nuit a partir de 71€</p>
-                            </div>
-                            <div class="stars-trend">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-empty.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="img-prices-trend">
-                        <img class="host-img-trend" src="assets/hebergements/5.jpg" alt="">
-                        <div class="right-trend">
-                            <div class="img-prices-text-trend">
-                                <h3>Hotel tout Bleu et Blanc</h3>
-                                <p>Nuit a partir de 68€</p>
-                            </div>
-                            <div class="stars-trend">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-full.png" alt="">
-                                <img src="assets/logos/star-empty.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="activity" id="activity">
-            <h1>Activités a Marseille</h1>
-            <div class="activity-result">
-                <div class="big-activity">
-                    <img src="assets/activites/5.jpg" alt="">
-                    <h3>Vieux Port</h3>
-                </div>
-                <div class="small-activity">
-                    <div class="small small-big space-under">
-                        <img src="assets/activites/4.jpg" alt="">
-                        <h3>Fort de Pomègues</h3>
-                    </div>
-                    <div class="small small-small">
-                        <img src="assets/activites/1.jpg" alt="">
-                        <h3>Îles du Frioul</h3>
-                    </div>
-                </div>
-                <div class="big-activity">
-                    <img src="assets/activites/2.jpg" alt="">
-                    <h3>Parc Nationale des Calanques</h3>
-                </div>
-                <div class="small-activity">
-                    <div class="small small-small space-under">
-                        <img src="assets/activites/6.jpg" alt="">
-                        <h3>Notre-Dame-de-la-Garde</h3>
-                    </div>
-                    <div class="small small-big">
-                        <img src="assets/activites/3.jpg" alt="">
-                        <h3>Parc Longchamp</h3>
-                    </div>
-                </div>
-            </div>
+        <div class="cart-icon">
+          <a href="cart.html"><img src="assets/cart.png" alt="Cart"></a>
         </div>
     </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">
+        <a href="index.html"><img class="letter-logo" src="assets/letter-logo.png" alt=""></a>
+      </div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#contact" onclick="toggleMenu()">CONTACT</a></li>
+          <li class="cart-icon"><a href="cart.html"><img src="assets/cart.png" alt="Cart"></a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="intro">
+      <div class="section__pic-container1">
+        <img class="logo-main" src="./assets/logo.png" alt="logo picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1"></p>
+        <h1 class="title">OXMOX</h1>
+        <p class="section__text__p2">DIE WITH STYLE</p>
+        <div class="btn-container">
+        </div>
+      </div>
+    </section>
+    <section id="items">
+      <h1 class="title">Nos Produits</h1>
+      <div class="items-container">
+      </div>
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Us</h1>
+      <a href="mailto:adresse@serveur.com">
+        <div class="contact-info-upper-container">
+          <div class="contact-info-container">
+            <img
+              src="./assets/email.png"
+              alt="Email icon"
+              class="icon contact-icon email-icon"
+            />
+            <p>EMAIL</a></p>
+          </div>
+        </div>
+      </a>
+    </section>
     <footer>
-        <div class="section">
-            <h3>A Propos</h3>
-            <a href="">Fonctionnement du site</a>
-            <a href="">Conditions Générale de vente</a>
-            <a href="">Données et Confidentialité</a>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="cart.html">CART</a></li>
+          </ul>
         </div>
-        <div class="section">
-            <h3>Nos hébergements</h3>
-            <a href="">Charte qualité</a>
-            <a href="">Soumettre votre hôtel</a>
-        </div>
-        <div class="section">
-            <h3>Assistance</h3>
-            <a href="">Centre d'aide</a>
-            <a href="">Nous contacter</a>
-        </div>
+      </nav>
+      <p>Copyright &#169; 2021-2023 OXMOX. All Rights Reserved.</p>
     </footer>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
