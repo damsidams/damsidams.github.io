@@ -31,87 +31,6 @@ interface MousePosition {
   y: number;
 }
 
-const teamMembers: TeamMember[] = [
-    { 
-      name: "Auguste Mulley",
-      role: "Twin Developer",
-      isTwin: true,
-      twinWith: "Virgile Mulley",
-      specialty: "Frontend Architect",
-      coordinates: "48.8566° N, 2.3522° E",
-      icon: <Compass className="w-6 h-6" />,
-      defis: {
-        title: "3DS OUTSCALE - L'île aux singes 2.0",
-        description: "Création d'une fonctionnalité d'aide à l'utilisateur inspirée du jeu Monkey Island, mêlant humour et culture pop dans une interface d'assistance unique.",
-        reward: "Bons cadeaux d'une valeur de 1000€ à partager",
-        deliverable: "Vidéo YouTube présentant la fonctionnalité",
-        stats: {
-          complexity: 85,
-          innovation: 92,
-          impact: 88
-        }
-      }
-    },
-    { 
-      name: "Virgile Mulley",
-      role: "Twin Developer",
-      isTwin: true,
-      twinWith: "Auguste Mulley",
-      specialty: "UX Navigator",
-      coordinates: "48.8566° N, 2.3522° E",
-      icon: <Map className="w-6 h-6" />,
-      defis: {
-        title: "Bad UI Challenge",
-        description: "Une expérience délibérément frustrante avec des interfaces utilisateur provocantes, repoussant les limites du design web.",
-        reward: "1ère place : 150€ bon FNAC, 2ème : 100€, 3ème : 50€",
-        deliverable: "Page web interactive",
-        stats: {
-          complexity: 90,
-          innovation: 95,
-          impact: 85
-        }
-      }
-    },
-    { 
-      name: "Eliott Duhau",
-      role: "Developer",
-      isTwin: false, // Explicitly set to false
-      specialty: "Backend Captain",
-      coordinates: "45.7578° N, 4.8320° E",
-      icon: <Anchor className="w-6 h-6" />,
-      defis: {
-        title: "CAPCOD - WORST CODE EVER",
-        description: "Une exploration artistique du 'mauvais code', transformant les anti-patterns en une forme d'art humoristique.",
-        reward: "1000 euros en chèque cadeau à partager",
-        deliverable: "Repository Git avec documentation",
-        stats: {
-          complexity: 88,
-          innovation: 86,
-          impact: 90
-        }
-      }
-    },
-    { 
-      name: "Fady Assem",
-      role: "Developer",
-      isTwin: false, // Explicitly set to false
-      specialty: "Security Helmsman",
-      coordinates: "43.2965° N, 5.3698° E",
-      icon: <Anchor className="w-6 h-6" />,
-      defis: {
-        title: "VIVERIS - Game Tcha",
-        description: "Réinvention du CAPTCHA traditionnel en une expérience de jeu immersive et sécurisée.",
-        reward: "1er prix : 1000€, 2ème : 400€, 3ème : 200€",
-        deliverable: "Application web interactive",
-        stats: {
-          complexity: 92,
-          innovation: 88,
-          impact: 94
-        }
-      }
-    }
-];
-
 const TeamCredits = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
@@ -148,7 +67,7 @@ const TeamCredits = () => {
           impact: 88
         }
       }
-    },
+    } as const,
     { 
       name: "Virgile Mulley",
       role: "Twin Developer",
@@ -168,10 +87,11 @@ const TeamCredits = () => {
           impact: 85
         }
       }
-    },
+    } as const,
     { 
       name: "Eliott Duhau",
       role: "Developer",
+      isTwin: false,
       specialty: "Backend Captain",
       coordinates: "45.7578° N, 4.8320° E",
       icon: <Anchor className="w-6 h-6" />,
@@ -186,10 +106,11 @@ const TeamCredits = () => {
           impact: 90
         }
       }
-    },
+    } as const,
     { 
       name: "Fady Assem",
       role: "Developer",
+      isTwin: false,
       specialty: "Security Helmsman",
       coordinates: "43.2965° N, 5.3698° E",
       icon: <Anchor className="w-6 h-6" />,
@@ -204,7 +125,7 @@ const TeamCredits = () => {
           impact: 94
         }
       }
-    }
+    } as const
   ];
 
   return (
@@ -257,7 +178,7 @@ const TeamCredits = () => {
                 setShowModal(true);
               }}
             >
-              {/* Card Component */}
+              {/* Card */}
               <div className="p-8 rounded-xl bg-navy-800/40 border border-cyan-500/10 
                 backdrop-blur-md transition-all duration-500 cursor-pointer
                 hover:border-cyan-500/30 hover:bg-navy-800/60
