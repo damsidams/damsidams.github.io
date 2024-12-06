@@ -1,13 +1,44 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Compass, Anchor, Map, Code, Terminal, Waves, X, Palette, Globe} from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Compass, Anchor, Map, Waves, X } from 'lucide-react';
+
+// Define TypeScript interfaces for our data structures
+interface TeamMemberStats {
+  complexity: number;
+  innovation: number;
+  impact: number;
+}
+
+interface TeamMemberDefi {
+  title: string;
+  description: string;
+  reward: string;
+  deliverable: string;
+  stats: TeamMemberStats;
+}
+
+interface TeamMember {
+  name: string;
+  role: string;
+  isTwin: boolean;
+  twinWith?: string;
+  specialty: string;
+  coordinates: string;
+  icon: JSX.Element;
+  defis: TeamMemberDefi;
+}
+
+interface MousePosition {
+  x: number;
+  y: number;
+}
 
 const TeamCredits = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedMember, setSelectedMember] = useState(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const containerRef = useRef(null);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
       setMousePosition({
@@ -17,7 +48,7 @@ const TeamCredits = () => {
     }
   };
 
-  const teamMembers = [
+  const teamMembers: TeamMember[] = [
     { 
       name: "Auguste Mulley",
       role: "Twin Developer",
@@ -63,7 +94,7 @@ const TeamCredits = () => {
       role: "Developer",
       specialty: "Backend Captain",
       coordinates: "45.7578° N, 4.8320° E",
-      icon: <Terminal className="w-6 h-6" />,
+      icon: <Anchor className="w-6 h-6" />,
       defis: {
         title: "CAPCOD - WORST CODE EVER",
         description: "Une exploration artistique du 'mauvais code', transformant les anti-patterns en une forme d'art humoristique.",
@@ -93,41 +124,6 @@ const TeamCredits = () => {
           impact: 94
         }
       }
-    },
-    { 
-      name: "Noé Cornu",
-      role: "Developer",
-      specialty: "Integration Specialist",
-      coordinates: "45.7640° N, 4.8357° E",
-      icon: <Globe className="w-6 h-6" />,
-      defis: {
-        title: "Custom Homepage Integration",
-        description: "Création d'une page d'accueil personnalisée reliant tous les différents projets GitHub, assurant une navigation fluide entre les différents défis de l'équipe.",
-        deliverable: "Homepage interactive avec liens GitHub",
-        stats: {
-          complexity: 82,
-          innovation: 85,
-          impact: 90
-        }
-      }
-    },
-    { 
-      name: "Damien Collet Lamoureux",
-      role: "Developer",
-      specialty: "Creative Director",
-      coordinates: "45.2402° N, 4.8083° E",
-      icon: <Palette className="w-6 h-6" />,
-      defis: {
-        title: "JD INFORMATIQUE - My Credit Page So Amazing",
-        description: "Création d'une page de crédits interactive et visuellement attrayante, mettant en valeur les contributeurs du projet avec un design dynamique et original.",
-        reward: "1ère place : 100€, 2ème : 50€, 3ème : 50€ en carte-cadeau Fnac",
-        deliverable: "Page web responsive et interactive",
-        stats: {
-          complexity: 88,
-          innovation: 92,
-          impact: 86
-        }
-      }
     }
   ];
 
@@ -143,7 +139,7 @@ const TeamCredits = () => {
           backgroundImage: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(100, 255, 255, 0.1) 0%, transparent 60%)`
         }} />
         <div className="grid grid-cols-12 h-full">
-          {Array.from({ length: 144 }).map((_, i) => (
+          {[...Array(144)].map((_, i) => (
             <div key={i} className="border-[0.5px] border-cyan-500/5" />
           ))}
         </div>
@@ -172,7 +168,7 @@ const TeamCredits = () => {
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {teamMembers.map((member, index) => (
+          {teamMembers.map((member) => (
             <div
               key={member.name}
               className="group relative"
@@ -181,7 +177,7 @@ const TeamCredits = () => {
                 setShowModal(true);
               }}
             >
-              {/* Card */}
+              {/* Card Component */}
               <div className="p-8 rounded-xl bg-navy-800/40 border border-cyan-500/10 
                 backdrop-blur-md transition-all duration-500 cursor-pointer
                 hover:border-cyan-500/30 hover:bg-navy-800/60
@@ -200,11 +196,9 @@ const TeamCredits = () => {
 
                 {/* Content */}
                 <div className="relative">
-                  {/* Icon Background */}
                   <div className="absolute -top-4 -left-4 w-24 h-24 bg-cyan-500/5 
                     rounded-full blur-xl" />
                   
-                  {/* Member Info */}
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 rounded-lg bg-cyan-500/10 
                       flex items-center justify-center border border-cyan-500/20">
@@ -220,13 +214,11 @@ const TeamCredits = () => {
                     </div>
                   </div>
 
-                  {/* Coordinates */}
                   <div className="flex items-center gap-2 text-cyan-300/40 text-sm mb-4">
                     <Map className="w-4 h-4" />
                     <span>{member.coordinates}</span>
                   </div>
 
-                  {/* Challenge Preview */}
                   <div className="bg-navy-900/50 rounded-lg p-4 border border-cyan-500/10">
                     <h4 className="text-cyan-200 font-medium mb-2">
                       {member.defis.title}
@@ -262,7 +254,7 @@ const TeamCredits = () => {
           <div 
             className="max-w-3xl w-full bg-navy-800/90 rounded-xl p-8 
               border border-cyan-500/20 transform transition-all duration-300"
-            onClick={e => e.stopPropagation()}>
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}>
             
             {/* Modal Header */}
             <div className="flex justify-between items-start mb-8">
@@ -336,17 +328,19 @@ const TeamCredits = () => {
         </div>
       )}
 
-      <style jsx>{`
-        @keyframes wave {
-          0% { transform: translateX(0) translateZ(0) scaleY(1); }
-          50% { transform: translateX(-25%) translateZ(0) scaleY(0.8); }
-          100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
-        }
+      <style>
+        {`
+          @keyframes wave {
+            0% { transform: translateX(0) translateZ(0) scaleY(1); }
+            50% { transform: translateX(-25%) translateZ(0) scaleY(0.8); }
+            100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+          }
 
-        .animate-wave {
-          animation: wave 15s infinite linear;
-        }
-      `}</style>
+          .animate-wave {
+            animation: wave 15s infinite linear;
+          }
+        `}
+      </style>
     </div>
   );
 };
